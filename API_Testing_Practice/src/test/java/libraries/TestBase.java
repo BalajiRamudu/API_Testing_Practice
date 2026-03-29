@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.Properties;
 
 public class TestBase {
@@ -13,15 +14,23 @@ public class TestBase {
 
     static {
         prop = new Properties();
-        FileInputStream ip;
         try {
             String fileName = "api_config.properties";
             LOGGER.info("***** Environment configs loading :{}", fileName);
-            ip = new FileInputStream("src\\test\\resources\\" + fileName);
+
+            InputStream ip = TestBase.class
+                    .getClassLoader()
+                    .getResourceAsStream(fileName);
+
+            if (ip == null) {
+                throw new RuntimeException("File not found in classpath: " + fileName);
+            }
+
             prop.load(ip);
+
         } catch (Exception e) {
             LOGGER.error("Exception", e);
-            System.exit(1);
+            throw new RuntimeException(e);
         }
     }
 
