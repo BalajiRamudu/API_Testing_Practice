@@ -19,10 +19,16 @@ jobs:
           distribution: 'temurin'
 
       - name: Run tests
-        run: cd API_Testing_Practice && mvn clean test
+        run: |
+          cd API_Testing_Practice
+          mvn clean test -Dallure.results.directory=target/allure-results
+
+      - name: List files (DEBUG)  # 🔥 add this temporarily
+        run: |
+          ls -R
 
       - name: Upload Allure Results
         uses: actions/upload-artifact@v4
         with:
           name: allure-results
-          path: API_Testing_Practice/target/allure-results
+          path: ./API_Testing_Practice/target/allure-results
