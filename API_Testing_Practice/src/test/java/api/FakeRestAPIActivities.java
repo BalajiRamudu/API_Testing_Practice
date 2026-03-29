@@ -1,7 +1,7 @@
 package api;
 
 import com.jayway.jsonpath.JsonPath;
-import gherkin.deps.com.google.gson.JsonObject;
+import com.google.gson.JsonObject;
 import io.restassured.response.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

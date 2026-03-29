@@ -1,7 +1,7 @@
 package utility;
 
 import api.Reqres;
-import gherkin.deps.com.google.gson.JsonObject;
+import com.google.gson.JsonObject;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import libraries.TestBase;

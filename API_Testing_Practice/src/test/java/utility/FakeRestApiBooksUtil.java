@@ -1,7 +1,7 @@
 package utility;
 
 import api.FakeRestApiBooks;
-import gherkin.deps.com.google.gson.JsonObject;
+import com.google.gson.JsonObject;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.slf4j.Logger;

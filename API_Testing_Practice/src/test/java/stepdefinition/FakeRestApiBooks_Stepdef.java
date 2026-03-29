@@ -1,8 +1,8 @@
 package stepdefinition;
 
 import api.FakeRestApiBooks;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class FakeRestApiBooks_Stepdef {
     @When("I send a request to retrieve all book details")
