@@ -25,4 +25,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: allure-results
-          path: API_Testing_Practice/allure-results
+          path: API_Testing_Practice/target/allure-results
