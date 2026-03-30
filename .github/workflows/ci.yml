@@ -35,6 +35,12 @@ jobs:
           cd API_Testing_Practice
           allure generate target/allure-results --clean -o target/allure-report    
 
+      - name: Deploy Allure Report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./API_Testing_Practice/target/allure-report
+
       - name: List files (DEBUG)
         run: |
           ls -R
