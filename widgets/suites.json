@@ -1,0 +1,1 @@
+{"total":2,"items":[{"uid":"79d636c1ae8f184a1e1bb4b30330813a","name":"FakeRest API Activities","statistic":{"failed":0,"broken":0,"skipped":0,"passed":3,"unknown":0,"total":3}},{"uid":"d8a8f09dc1a11c6a3ee2f513ca009c90","name":"FakeRest API Books","statistic":{"failed":0,"broken":0,"skipped":0,"passed":2,"unknown":0,"total":2}}]}
