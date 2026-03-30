@@ -23,7 +23,12 @@ jobs:
           cd API_Testing_Practice
           mvn clean test -Dallure.results.directory=target/allure-results
 
-      - name: List files (DEBUG)  # 🔥 add this temporarily
+      - name: Generate Allure Report
+        run: |
+          cd API_Testing_Practice
+          mvn allure:report    
+
+      - name: List files (DEBUG)
         run: |
           ls -R
 
