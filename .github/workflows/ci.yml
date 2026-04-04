@@ -2,7 +2,9 @@ name: API Test CI Pipeline
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
+      - feature/*
 
   workflow_dispatch:
 
@@ -38,6 +40,7 @@ jobs:
           allure generate target/allure-results --clean -o target/allure-report    
 
       - name: Deploy Allure Report to GitHub Pages
+        if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
