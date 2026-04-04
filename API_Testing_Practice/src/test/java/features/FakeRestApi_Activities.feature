@@ -1,6 +1,6 @@
 Feature: FakeRest API Activities
 
-  Scenario Outline: Retrieve all activities details
+  Scenario Outline: Retrieve all activities details (retrieve all the activities details)
     When I send a GET request to retrieve all activity details
     Then the GET activities response status code should be "<HttpStatusCode>"
     Then the response should contain valid activity details for "id"
