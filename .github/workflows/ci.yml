@@ -7,6 +7,11 @@ on:
       - feature/*
 
   workflow_dispatch:
+    inputs:
+      environment:
+        description: "Select Environment"
+        required: true
+        default: "qa"
 
   schedule:
     - cron: "0 2 * * *"
@@ -15,7 +20,13 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    env:
+      ENVIRONMENT: ${{ github.event.inputs.environment || 'qa' }}
+
     steps:
+      - name: Print Environment
+        run: echo "Running in $ENVIRONMENT environment"
+
       - name: Checkout code
         uses: actions/checkout@v4
 
