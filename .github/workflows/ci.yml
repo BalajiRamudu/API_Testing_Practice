@@ -11,6 +11,10 @@ on:
       environment:
         description: "Select Environment"
         required: true
+        type: choice
+        options:
+          - qa
+          - uat
         default: "qa"
 
   schedule:
