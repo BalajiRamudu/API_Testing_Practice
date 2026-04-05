@@ -11,10 +11,17 @@ public class TestBase {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TestBase.class);
     public static Properties prop;
+    public static String ENV;
 
     static {
         prop = new Properties();
         try {
+            ENV = System.getProperty("env");
+            if (ENV == null || ENV.isEmpty()) {
+                ENV = "qa";
+            }
+            LOGGER.info("***** Running in Environment: {}", ENV);
+
             String fileName = "api_config.properties";
             LOGGER.info("***** Environment configs loading :{}", fileName);
 

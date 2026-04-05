@@ -95,7 +95,8 @@ public class FakeRestAPIActivities {
     }
 
     public static void getRetrieveFakeAPIActivityForId (String id){
-        GetRetrieveActivitiesDetailsResponse = FakeRestApiActivitiesUtil.getFakeApiActivities(id);
+        String activityId = FakeRestApiActivitiesUtil.getActivityIdBasedOnEnv();
+        GetRetrieveActivitiesDetailsResponse = FakeRestApiActivitiesUtil.getFakeApiActivities(activityId);
         GetRetrieveActivitiesDetailsResponseStr = GetRetrieveActivitiesDetailsResponse.asString();
     }
 

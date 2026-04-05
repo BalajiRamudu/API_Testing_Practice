@@ -43,7 +43,9 @@ jobs:
       - name: Run tests
         run: |
           cd API_Testing_Practice
-          mvn clean test -Dallure.results.directory=target/allure-results
+          mvn clean test \
+          -Denv=$ENVIRONMENT \
+          -Dallure.results.directory=target/allure-results
 
       - name: Install Allure CLI
         run: |

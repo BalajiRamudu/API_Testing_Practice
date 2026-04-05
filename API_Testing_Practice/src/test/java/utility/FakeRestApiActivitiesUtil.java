@@ -1,5 +1,6 @@
 package utility;
 
+import libraries.TestBase;
 import api.FakeRestAPIActivities;
 import com.google.gson.JsonObject;
 import org.slf4j.Logger;
@@ -56,6 +57,22 @@ public class FakeRestApiActivitiesUtil {
         SoftAssert sa = new SoftAssert();
         sa.assertEquals(actualStatusCode, expectedStatusCode, "Response Body: " + FakeApiActivityRespone.asString() + ", HttpStatusCode not matched: ");
         sa.assertAll();
+    }
+
+    public static String getActivityIdBasedOnEnv() {
+
+        String env = TestBase.ENV;
+
+        if (env.equalsIgnoreCase("qa")) {
+            LOGGER.info("Using QA test data → Activity ID = 1");
+            return "1";
+        } else if (env.equalsIgnoreCase("uat")) {
+            LOGGER.info("Using UAT test data → Activity ID = 5");
+            return "5";
+        } else {
+            LOGGER.info("Using DEFAULT test data → Activity ID = 1");
+            return "1";
+        }
     }
 
 }

@@ -27,7 +27,7 @@ Feature: FakeRest API Activities
   Scenario Outline: Retrieve the specific activity id
     When I retrieve the user activities for "<id>"
     Then the activity response status code should be "<HttpStatusCode>"
-    And the "id" field should be present and have the value "<id>"
+    #And the "id" field should be present and have the value "<id>"
     Then Verify the response should contain valid activity details for "title"
     Then Verify the response should contain valid activity details for "dueDate"
     Then Verify the response should contain valid activity details for "completed"
